@@ -1,12 +1,52 @@
-document.getElementById("contactForm").addEventListener("submit", function(event){
-    // This function will be called when the form is submitted
+document.addEventListener("DOMContentLoaded", function () {
+    const partnerSwiper = new Swiper('.partner-list', {
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  
+    const gallerySwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        
+        if (phone.length !== 10) {
+            alert("Phone number should be 10 digits.");
+            event.preventDefault();
+        }
+        
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            event.preventDefault();
+        }
     
-    // Example: Validate the phone number length
-    const phone = document.getElementById("phone").value;
-    if(phone.length !== 10){
-        alert("Phone number should be 10 digits.");
-        event.preventDefault(); // Prevent form from submitting
+        // Add more form validation checks as needed
+        
+        // If all validation checks pass, the form will be submitted as usual
+    });
+    
+    // Function to validate email format
+    function isValidEmail(email) {
+        // Use a regular expression to validate email format
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailRegex.test(email);
     }
-
-    // You can add more validation as needed
+    
+  const images = document.querySelectorAll('.swiper-slide img');
+images.forEach(image => {
+    console.log('Image dimensions:', image.width, 'x', image.height);
 });
