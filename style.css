@@ -86,8 +86,8 @@ header {
 .btn-primary {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    background-color: #0088a9;
+    border-radius: 50px;
+    background-color: #c0e6ed;
     color: white;
     text-decoration: none;
     transition: 0.3s;
@@ -465,77 +465,103 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+
+
 /* Ensure images are hidden until the loop works correctly */
 
 /* ... (your existing styles) ... */
 
 /* Media queries for responsive adjustments */
 @media (max-width: 1200px) {
-    .main-content {
-        padding: 20px; /* Adjust padding for smaller screens */
-    }
-    
-    /* Adjust the styles for the navigation, header, and other elements as needed */
-    
-    /* Show the partner list at smaller screen widths */
-    .partner-list {
-        display: flex;
-        /* ... (other styles) ... */
-    }
+    /* Make necessary adjustments for larger screens */
 }
 
-
+/* For screens larger than 768px (typical tablets) */
 @media (max-width: 768px) {
-    .nav_links, li {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
-
-    .logo {
-        height: 100px;
-        width: 100px;
-    }
-
-    button {
-        padding: 8px 20px;
-        font-size: 16px;
-    }
-
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* Responsive styles for mobile devices */
-@media (max-width: 480px) {
     .logo {
         height: 80px;
         width: 80px;
     }
-}
 
-@media (max-width: 768px) {
     header {
         flex-direction: column;
     }
 
     .nav_links {
         margin-top: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 
     .hero {
-        height: 60vh;
+        height: 60vh; /* Adjust hero section height */
     }
 
     .contact-section {
         padding: 20px;
     }
+
+    /* Adjust other styles as needed */
 }
 
+/* For screens smaller than 480px (typical smartphones) */
+@media (max-width: 480px) {
+    .logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    /* Adjust other styles as needed */
+}
+
+* For screens larger than 768px (typical tablets) */
 @media (max-width: 768px) {
-    .content {
-        grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 items per row on smaller screens */
+    .founder-section {
+        display: flex;
+        flex-direction: column-reverse; /* Place image below founder info */
+        align-items: center; /* Center align both content and image */
+    }
+
+    .founder-info {
+        margin-bottom: 20px; /* Add space between content and image */
+    }
+
+    .founder-image img {
+        max-width: 100%; /* Ensure image doesn't overflow its container */
+        height: auto;
+    }
+
+    /* Adjust other styles as needed */
+}
+
+/* For screens larger than 480px (typical phones) */
+@media (max-width: 480px) {
+    .founder-section {
+        padding: 20px; /* Add padding to the section */
+    }
+
+    .founder-image img {
+        width: 100%; /* Set image width to fill its container */
+    }
+
+    /* Adjust other styles as needed */
+}
+
+@media (max-width: 480px) {
+    .combined-section {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align content */
+        text-align: center; /* Center-align text content */
+
+        /* Add padding to create space between elements */
+        padding: 20px;
+    }
+
+    .combined-image {
+        margin-top: 20px; /* Add space between content and image */
     }
 }
