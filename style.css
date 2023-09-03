@@ -87,7 +87,7 @@ header {
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    background-color: #c0e6ed;
+    background-color: black;
     color: white;
     text-decoration: none;
     transition: 0.3s;
@@ -99,11 +99,15 @@ header {
 
 button {
     padding: 10px 25px;
-    background-color: #c0e6ed;
+    background-color: black;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: #005f75;
 }
 
 .partners h2 {
